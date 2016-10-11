@@ -6,7 +6,9 @@ def f(x):
     else:
         res=-x**2+4
     return res
-values=[random.random()*6-3 for i in range(100000)]
+n=int(input())
+values=[random.random()*6-3 for i in range(n)]
 results=[f(x) for x in values]
-int=(6/100000)*sum(results)
-print(int)
+y=(6/n)*sum(results)
+
+print(y)
