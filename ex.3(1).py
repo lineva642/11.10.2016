@@ -12,8 +12,9 @@ def   get_percentile(values, n):
         act +=perl
     result[0]=0.0
     return result
-values = [3, 4, 1, 2, 5, 6, 7, 8, 9, 10]
-print(get_percentile(values, 4))
+if __name__=='__main__':
+    values = [3, 4, 1, 2, 5, 6, 7, 8, 9, 10]
+    print(get_percentile(values, 4))
 
 
 
