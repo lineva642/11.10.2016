@@ -20,7 +20,14 @@ def get_percentile_number(value, percentiles):
         else:
             break
     return index
+def value_equalization(value, percentiles, add_random = False):
+    idx = get_percentile_number(value, percentiles)
+    step = 1/len(percentiles)
+    new_value = idx*step
+    if add_random == True:
+        new_value = idx*step + random.uniform(idx*step, (idx+1)*step)
+    return new_value
 if __name__=='__main__':
     values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
     percentiles = get_percentile(values, 5)
-    print(get_percentile_number(2.5,percentiles))
+    print(value_equalization(5.5, percentiles))
